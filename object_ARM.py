@@ -52,12 +52,9 @@ class arm :
         return T
 
     def fk_dh(self,rz,d,a,alpa):
-        DH = (self.Rz(rz)@ self.transZ(d)@ self.transX(a)@ self.Rx(alpa))
+        DH = (self.Rz(rz)@ self.transZ(d)
+              @ self.transX(a)@ self.Rx(alpa))
         
         return DH
 
-arm1 = arm('lengan1')
 
-wris = arm1.transZ(np.radians(90))
-
-print(wris)
